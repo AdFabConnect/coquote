@@ -1,0 +1,59 @@
+{
+    "name": "Coquote",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "clipboardRead",
+        "clipboardWrite",
+        "storage",
+        "contextMenus",
+        "notifications",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "scripts": [
+            "js/background.all.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "css": [
+                "css/style.css"
+            ],
+            "js": [
+                "js/front.all.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "sandbox": {
+       "pages": [
+           "index.html"
+       ]
+    },
+    "offline_enabled": true,
+    "icons": {
+        "16": "icon16.png",
+        "16": "icon19.png",
+        "16": "icon32.png",
+        "48": "icon48.png",
+        "48": "icon100.png",
+        "128": "icon128.png"
+    },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "description": "Looq - send me something",
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+        "css/popup.css",
+        "login.html",
+        "img/looq-close.png"
+    ],
+    "manifest_version": 2
+}
